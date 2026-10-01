@@ -1,0 +1,6 @@
+{
+  "name": "Adit Fit Tracker",
+  "description": "Comprehensive daily fitness, nutrition, water, routine checklist, and AI coach tracker.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

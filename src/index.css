@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050B18;
+    --bg-secondary: #0A1222;
+    --glass-card: rgba(20, 35, 55, 0.55);
+    --glass-card-hover: rgba(30, 50, 75, 0.68);
+    --glass-border: rgba(255, 255, 255, 0.10);
+    --accent-teal: #00D9B5;
+    --accent-cyan: #00C8FF;
+    --accent-blue: #4D9FFF;
+    --accent-green: #20D68A;
+    --accent-orange: #FFB020;
+    --accent-red: #FF5C6C;
+    --text-primary: #F5F7FA;
+    --text-secondary: #9AA8BC;
+    --text-muted: #66758A;
+  }
+
+  body {
+    background-color: #050B18;
+    color: #F5F7FA;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Glassmorphism styles */
+.glass-panel {
+  background: rgba(20, 35, 55, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(30, 50, 75, 0.68);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-capsule {
+  background: rgba(20, 35, 55, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle staggered entry animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-1 {
+  animation: fadeSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-card-2 {
+  opacity: 0;
+  animation: fadeSlideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.08s forwards;
+}
+
+.animate-card-3 {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.16s forwards;
+}
+
+.animate-card-4 {
+  opacity: 0;
+  animation: fadeSlideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards;
+}
+
+/* Safe area padding for mobile navigation */
+.safe-area-pb {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0.5rem));
+}
